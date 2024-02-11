@@ -19,7 +19,7 @@ TODO
 
 ![103GB deleted in just 790ms](https://github.com/uwu/win-fast-rm/blob/main/benchmarks/demo.png)
 
-On my system (Ryzen 5 5600x, Crucial P5 Plus @ PCIe Gen3 speeds, ~3500MBps max write speed) and Windows 11, it deletes 103GB of data in > 800ms.
+On my system (Ryzen 5 5600x, Crucial P5 Plus @ PCIe Gen3 speeds, ~3500MBps max write speed) and Windows 11, it deletes 103GB of data in less than 800ms.
 
 ## Using this project
 
