@@ -1,0 +1,16 @@
+[package]
+name = "win_fast_rm"
+version = "1.0.0"
+authors = ["xirreal"]
+edition = "2021"
+
+[[bin]]
+name = "rm"
+
+[dependencies]
+windows = { version = "0.52.0", features = [
+   "Win32_Foundation",
+   "Win32_UI_Shell",
+   "Win32_Storage_FileSystem",
+   "Win32_System_Com",
+] }
