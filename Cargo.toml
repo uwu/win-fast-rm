@@ -4,8 +4,13 @@ version = "1.0.0"
 authors = ["xirreal"]
 edition = "2021"
 
+[lib]
+name = "win_fast_rm"
+path = "src/lib.rs"
+
 [[bin]]
-name = "rm"
+name = "win-fast-rm"
+path = "src/bin/rm.rs"
 
 [dependencies]
 windows = { version = "0.52.0", features = [
