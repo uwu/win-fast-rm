@@ -11,7 +11,7 @@ use windows::Win32::{
 };
 
 pub fn resolve_path(path: &OsStr) -> PathBuf {
-    // Canonicalize is fine on non windows. Windows uses UNC and that messes up IFileOperation.
+    // Canonicalize is fine on Linux and MacOS. Windows uses UNC and that messes up IFileOperation.
     // TODO: Check if canonicalize is actually fine, it might error on non-existent paths.
     #[cfg(not(windows))]
     {
@@ -43,8 +43,8 @@ pub fn delete_path(path: &PathBuf) -> windows::core::Result<()> {
     }
     /*
     Initialize COM using multi-threaded apartment model.
-    It's for GUI threads according to https://learn.microsoft.com/en-us/windows/win32/learnwin32/initializing-the-com-library,
-    however it seems to just shave off like 2-3ms compared to normal multi-threaded, at least on Windows 11.
+    It's *technically* meant for GUI threads, according to https://learn.microsoft.com/en-us/windows/win32/learnwin32/initializing-the-com-library,
+    however it seems to just shave off ~2-3ms compared to normal multi-threaded, at least on Windows 11.
     */
     unsafe {
         CoInitializeEx(None, COINIT_APARTMENTTHREADED)?;

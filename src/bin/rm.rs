@@ -3,16 +3,17 @@ use std::path::PathBuf;
 use win_fast_rm::{delete_path, resolve_path};
 
 fn humanize_size(size: u64) -> String {
-    // Convert to nearest unit iteratively (KB, MB, GB, TB)
+    const UNITS: [&str; 5] = [" bytes", " KB", " MB", " GB", " TB"];
+
     let mut size = size as f64;
-    for unit in [" bytes", " KB", " MB", " GB", " TB"].iter() {
+    for unit in UNITS.iter() {
         if size < 1024.0 {
             return format!("{:.2}{}", size, unit);
         }
         size /= 1024.0;
     }
 
-    format!("{:.2}{}", size, " TB")
+    format!("{:.2}{}", size, UNITS.last().unwrap())
 }
 
 fn get_directory_size(path: &PathBuf) -> u64 {
