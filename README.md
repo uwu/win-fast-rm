@@ -24,3 +24,5 @@ On my system (Ryzen 5 5600x, Crucial P5 Plus @ PCIe Gen3 speeds, ~3500MBps max w
 ## Using this project
 
 The project is distributed as a library, allowing you to delete files are fast as possible in your applications, or as an executable for testing purposes.
+
+You can get it on cargo with `cargo install

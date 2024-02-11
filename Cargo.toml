@@ -1,8 +1,13 @@
 [package]
-name = "win_fast_rm"
 version = "1.0.0"
-authors = ["xirreal"]
 edition = "2021"
+
+name = "win_fast_rm"
+description = "The actually faster way to delete files on Windows"
+authors = ["xirreal"]
+license = "MIT"
+license-file = "LICENSE"
+repository = "https://github.com/uwu/win-fast-rm"
 
 [lib]
 name = "win_fast_rm"
